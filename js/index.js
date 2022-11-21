@@ -44,6 +44,17 @@ window.addEventListener('DOMContentLoaded', () => {
       o: ['Sydney', 'Canberra', 'Melbourne', 'Perth'],
       a: 1,
     },
+    {
+      q: 'What is the capital of USA',
+      o: ['New York', 'Washington', 'Los Angeles', 'Chicago'],
+      a: 1,
+    },
+    {
+      q: 'What is the highest mountain in the world',
+      o: ['Everest', 'Elbrus', 'Kilimanjaro', 'Makalu'],
+      a: 0,
+    },
+    
   ];
 
   // function to Display the quiz questions and answers from the object
