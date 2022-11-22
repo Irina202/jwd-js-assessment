@@ -85,17 +85,30 @@ window.addEventListener('DOMContentLoaded', () => {
         liElement = document.querySelector('#' + li);
         radioElement = document.querySelector('#' + r);
 
-        if (quizItem.a == i) {
+        if (quizItem.a == i && radioElement.checked) {
           //change background color of li element here
+          liElement.style.backgroundColor = "green";
+          score++;
         }
 
-        if (radioElement.checked) {
+        
           // code for task 1 goes here
-        }
+          
+          
       }
     });
+    alert(score);
   };
 
   // call the displayQuiz function
   displayQuiz();
+  const btnSubmit = document.getElementById('btnSubmit');
+const btnReset = document.getElementById('btnReset');
+function resetQuiz() {
+  score = 0;
+  window.location.reload();
+}
+btnSubmit.addEventListener('click', calculateScore);
+btnReset.addEventListener('click', resetQuiz);
 });
+
