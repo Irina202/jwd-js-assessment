@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
   start.addEventListener('click', function (e) {
     document.querySelector('#quizBlock').style.display = 'block';
     start.style.display = 'none';
+    setTimer();
   });
   // quizArray QUESTIONS & ANSWERS
   // q = QUESTION, o = OPTIONS, a = CORRECT ANSWER
@@ -72,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     <div>&nbsp;</div>`;
       quizWrap.innerHTML = quizDisplay;
     });
-  };
+  }; 
 
   // Calculate the score
   const calculateScore = () => {
@@ -92,13 +93,28 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         
-          // code for task 1 goes here
-          
-          
       }
     });
-    alert(score);
+    return document.getElementById('result').innerHTML = "Your score is " + score;
   };
+
+  function setTimer() {
+    let startTime = 60;
+    let timer = setInterval(myTimer, 1000);
+   
+    function myTimer() {
+    document.getElementById('time').innerHTML = `${startTime} seconds`;
+    startTime--;
+    
+    if(startTime === -1){
+      clearInterval(timer);
+      calculateScore();
+      alert('Time is up');
+      
+    } 
+    }
+  }
+  
 
   // call the displayQuiz function
   displayQuiz();
